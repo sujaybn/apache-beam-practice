@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the source code from Git repository
+                git 'https://github.com/sujaybn/apache-beam-practice'
+            }
+        }
+        stage('Build') {
+            steps {
+                // Run Maven build
+                sh 'mvn clean package'
+            }
+        }
+        stage('Archive') {
+            steps {
+                // Archive the built artifacts
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            }
+        }
+    }
+
+    post {
+        always {
+            // Cleanup
+            cleanWs()
+        }
+    }
+}
