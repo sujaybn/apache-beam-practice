@@ -15,7 +15,7 @@ public class JsonParsing {
         Pipeline pipeline = Pipeline.create(options);
 
         // Read input JSON file
-        PCollection<String> input = pipeline.apply(TextIO.read().from("input.json"));
+        PCollection<String> input = pipeline.apply(TextIO.read().from("src/main/resources/input.json"));
 
         // Parse JSON and extract first_name, last_name, and country
         PCollection<KV<String, String>> parsedData = input.apply("Parse JSON", ParDo.of(new DoFn<String, KV<String, String>>() {
@@ -40,7 +40,7 @@ public class JsonParsing {
         PCollection<String> formattedCounts = countryCounts.apply("Format counts", MapElements.into(TypeDescriptors.strings()).via(kv -> kv.getKey() + "," + kv.getValue()));
 
         // Write output to CSV file
-        formattedCounts.apply("Write CSV", TextIO.write().to("output.csv").withFooter("Country,Count").withNumShards(1).withSuffix(".csv"));
+        formattedCounts.apply("Write CSV", TextIO.write().to("src/main/output/output.csv").withFooter("Country,Count").withNumShards(1).withSuffix(".csv"));
 
         pipeline.run().waitUntilFinish();
     }

@@ -12,7 +12,7 @@
 
 # Maven
 target/
-
+output/
 # Eclipse
 .classpath
 .project
