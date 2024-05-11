@@ -1,0 +1,46 @@
+[
+  {
+    "store": "Amazon",
+    "product_title": "iPhone 13",
+    "product_description": {
+      "storage": "128 GB",
+      "ram": "8 GB",
+      "price": "INR 79999"
+    },
+    "url": "https://amazon.in/products/iphone/13",
+    "store_booster_score": 8
+  },
+  {
+    "store": "Flipkart",
+    "product_title": "iPhone 13",
+    "product_description": {
+      "storage": "128 GB",
+      "ram": "8 GB",
+      "price": "INR 76999"
+    },
+    "url": "https://flipkart.com/products/iphone/13",
+    "store_booster_score": 6
+  },
+  {
+    "store": "Apple store",
+    "product_title": "iPhone 13",
+    "product_description": {
+      "storage": "128 GB",
+      "ram": "8 GB",
+      "price": "INR 81999"
+    },
+    "url": "https://store.apple.co.in/products/iphone/13",
+    "store_booster_score": 9
+  },
+  {
+    "store": "Croma",
+    "product_title": "iPhone 13",
+    "product_description": {
+      "storage": "64 GB",
+      "ram": "16 GB",
+      "price": "INR 65000"
+    },
+    "url": "https://croma.in/products/iphone/13",
+    "store_booster_score": 5
+  }
+]
